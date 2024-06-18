@@ -3,7 +3,7 @@ const Books = require("../model/bookModel");
 //------------------------Get all the books from DB------------------------
 const getAllBooks = async (req, res) => {
   try {
-    const limit = parseInt(req.query.limit) || 8;  // Default limit to 8 if not provided
+    const limit = parseInt(req.query.limit) ;  
     const sortOrder = req.query.sort === 'asc' ? 1 : req.query.sort === 'desc' ? -1 : null;
 
     let query = Books.find({});
